@@ -2,10 +2,9 @@
 Imports System.Diagnostics
 Imports System.ComponentModel
 Imports CasparObjects
-Imports MyColorThemes
-Imports CommonAppData
 Imports System.Threading
 Imports System.Xml
+Imports System.Text
 
 Public Class frmMain
 
@@ -639,6 +638,130 @@ Public Class frmMain
       End Using
 
       Cursor = Cursors.Default
+
+   End Sub
+
+   Private Function DocumentPath(sourcePath As String, sb As StringBuilder) As StringBuilder
+
+      Dim imageFilename As String = ""
+      Dim metadataFilename As String = ""
+
+      Dim files() As String = Directory.GetFiles(sourcePath, "*.*")
+      For Each fn As String In files
+
+         If Not fn.Contains("_thumbnail") Then
+            If fn.EndsWith(".png") Then
+               imageFilename = fn
+            ElseIf fn.EndsWith(".xml") Then
+               metadataFilename = fn
+            End If
+         End If
+      Next
+
+      If imageFilename <> "" Or metadataFilename <> "" Then
+
+         If metadataFilename <> "" Then
+            sb.AppendLine(String.Format("<h1 style='font-size:16pt;'>{0}</h1>", Path.GetFileNameWithoutExtension(metadataFilename)))
+         End If
+
+         If imageFilename <> "" Then
+            Dim url As String = New System.Uri(imageFilename).ToString
+            sb.Append(String.Format("<img src='{0}' width='320' height='180'>", url))
+         End If
+
+         If metadataFilename <> "" Then
+
+            Dim doc As XmlDocument = New XmlDocument()
+            doc.Load(metadataFilename)
+            Dim nodes As XmlNodeList = doc.DocumentElement.SelectNodes("parameters/parameter")
+            If nodes.Count > 0 Then
+
+               sb.AppendLine("<h2 style='font-size:14pt;'>Data Fields</h2>")
+               sb.AppendLine("<table>")
+
+               For Each nd As XmlNode In nodes
+
+                  If Not nd.Attributes.Item(0).Value.StartsWith("astra_") Then
+
+                     sb.AppendLine("<tr>")
+                     For Each attr As XmlAttribute In nd.Attributes
+                        If attr.Name = "id" Then
+                           sb.AppendLine(String.Format("<td style='width:180px;'>{0}</td>", attr.Value))
+                        End If
+                        If attr.Name = "info" Then
+                           sb.AppendLine(String.Format("<td style='width:500px;'>{0}</td>", attr.Value))
+                        End If
+                     Next
+                     sb.AppendLine("</tr>")
+
+                  End If
+
+               Next
+
+               sb.AppendLine("</table>")
+               sb.AppendLine("<h2 style='font-size:14pt;'>Description</h2>")
+               sb.AppendLine("<p style='font-size:12pt;'>Description goes here.</p>")
+
+            End If
+
+         End If
+
+      End If
+
+      Dim dirs() As String = IO.Directory.GetDirectories(sourcePath)
+      If dirs.Length > 0 Then
+
+         For Each dir As String In dirs
+            sb = DocumentPath(dir, sb)
+         Next
+
+      End If
+
+      Return sb
+
+   End Function
+
+   Private Sub lnklblDocumentation_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblDocumentation.LinkClicked
+
+      Dim dlg As SaveFileDialog = New SaveFileDialog
+      dlg.Filter = "HTML Document (*.html)|All Files (*.*)|*.*||"
+      dlg.FilterIndex = 0
+      dlg.DefaultExt = ".html"
+
+      If dlg.ShowDialog(Me) = DialogResult.OK Then
+
+         Dim fn As String = dlg.FileName
+
+         Dim templateDestPath As String = IO.Path.Combine(_settings.CasparTemplatePath, cboDestination.Text.Replace("/", "\"))
+         Dim sb As StringBuilder = New StringBuilder
+
+         sb.AppendLine("<!DOCTYPE html>")
+         sb.AppendLine("<html>")
+         sb.AppendLine("   <head>")
+         sb.AppendLine("      <meta charset='utf-8'>")
+         sb.AppendLine("      <title>Documentation</title>")
+         sb.AppendLine("      <style>")
+         sb.AppendLine("      img {")
+         sb.AppendLine("         border: 1px solid black;")
+         sb.AppendLine("      }")
+         sb.AppendLine("      table, th, td {")
+         sb.AppendLine("         border: 1px solid black;")
+         sb.AppendLine("         border-collapse: collapse;")
+         sb.AppendLine("      }")
+         sb.AppendLine("      </style>")
+         sb.AppendLine("   </head>")
+         sb.AppendLine("   <body>")
+
+         sb = DocumentPath(templateDestPath, sb)
+
+         sb.AppendLine("   </body>")
+         sb.AppendLine("</html>")
+
+         Debug.Print(sb.ToString)
+
+         File.WriteAllText(fn, sb.ToString)
+
+      End If
 
    End Sub
 

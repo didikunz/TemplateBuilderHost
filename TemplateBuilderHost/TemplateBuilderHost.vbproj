@@ -51,15 +51,6 @@
     <ApplicationIcon>TemplateBuilderHost.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CommonAppData">
-      <HintPath>..\..\ZZZ_Extrenals\CommonAppData.dll</HintPath>
-    </Reference>
-    <Reference Include="CommonControls">
-      <HintPath>..\..\ZZZ_Common\CommonControls\Controls\bin\Release\CommonControls.dll</HintPath>
-    </Reference>
-    <Reference Include="MyColorThemes">
-      <HintPath>..\..\ZZZ_Common\MyColorThemes\bin\Release\MyColorThemes.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -85,6 +76,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonApplicationData.vb" />
+    <Compile Include="ctrFileTextBox.designer.vb">
+      <DependentUpon>ctrFileTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrFileTextBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrPathTextBox.designer.vb">
+      <DependentUpon>ctrPathTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrPathTextBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +102,7 @@
     <Compile Include="frmSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Loader.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -113,9 +118,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NiceButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Settings.vb" />
+    <Compile Include="Theme.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ctrFileTextBox.resx">
+      <DependentUpon>ctrFileTextBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrPathTextBox.resx">
+      <DependentUpon>ctrPathTextBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +178,7 @@
     <None Include="Resources\Refresh12.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\DeleteHS.png" />
     <Content Include="TemplateBuilderHost.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

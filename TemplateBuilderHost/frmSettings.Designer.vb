@@ -27,13 +27,13 @@ Partial Class frmSettings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.nudChannel = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnCancel = New CommonControls.NiceButton()
-        Me.btnOk = New CommonControls.NiceButton()
-        Me.ftbCompiler = New CommonControls.ctrFileTextBox()
-        Me.ftbCasparCG = New CommonControls.ctrFileTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ptbTemplatePath = New CommonControls.ctrPathTextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+      Me.btnCancel = New TemplateBuilderHost.NiceButton()
+      Me.btnOk = New TemplateBuilderHost.NiceButton()
+      Me.ftbCompiler = New TemplateBuilderHost.ctrFileTextBox()
+      Me.ftbCasparCG = New TemplateBuilderHost.ctrFileTextBox()
+      Me.Label2 = New System.Windows.Forms.Label()
+      Me.ptbTemplatePath = New TemplateBuilderHost.ctrPathTextBox()
+      Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cboAddInfoFields = New System.Windows.Forms.ComboBox()
         Me.chkHelper2Root = New System.Windows.Forms.CheckBox()
@@ -122,9 +122,9 @@ Partial Class frmSettings
         '
         Me.ftbCompiler.BackColor = System.Drawing.Color.Transparent
         Me.ftbCompiler.CustomDialogFilter = "Compiler exe file (Build.exe)|Build.exe|All Files (*.*)|*.*||"
-        Me.ftbCompiler.DialogFilter = CommonControls.ctrFileTextBox.DialogFilterType.dtfCustom
-        Me.ftbCompiler.DialogType = CommonControls.ctrFileTextBox.enumDialogType.OpenDialog
-        Me.ftbCompiler.Filename = ""
+      Me.ftbCompiler.DialogFilter = TemplateBuilderHost.ctrFileTextBox.DialogFilterType.dtfCustom
+      Me.ftbCompiler.DialogType = TemplateBuilderHost.ctrFileTextBox.enumDialogType.OpenDialog
+      Me.ftbCompiler.Filename = ""
         Me.ftbCompiler.IntialDirectory = ""
         Me.ftbCompiler.Location = New System.Drawing.Point(13, 24)
         Me.ftbCompiler.Margin = New System.Windows.Forms.Padding(0)
@@ -141,9 +141,9 @@ Partial Class frmSettings
         '
         Me.ftbCasparCG.BackColor = System.Drawing.Color.Transparent
         Me.ftbCasparCG.CustomDialogFilter = "Compiler exe file (Build.exe)|Build.exe|All Files (*.*)|*.*||"
-        Me.ftbCasparCG.DialogFilter = CommonControls.ctrFileTextBox.DialogFilterType.dtfCustom
-        Me.ftbCasparCG.DialogType = CommonControls.ctrFileTextBox.enumDialogType.OpenDialog
-        Me.ftbCasparCG.Filename = ""
+      Me.ftbCasparCG.DialogFilter = TemplateBuilderHost.ctrFileTextBox.DialogFilterType.dtfCustom
+      Me.ftbCasparCG.DialogType = TemplateBuilderHost.ctrFileTextBox.enumDialogType.OpenDialog
+      Me.ftbCasparCG.Filename = ""
         Me.ftbCasparCG.IntialDirectory = ""
         Me.ftbCasparCG.Location = New System.Drawing.Point(13, 64)
         Me.ftbCasparCG.Margin = New System.Windows.Forms.Padding(0)
@@ -258,13 +258,13 @@ Partial Class frmSettings
     Friend WithEvents Label5 As Label
     Friend WithEvents nudChannel As NumericUpDown
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnCancel As CommonControls.NiceButton
-    Friend WithEvents btnOk As CommonControls.NiceButton
-    Friend WithEvents ftbCompiler As CommonControls.ctrFileTextBox
-    Friend WithEvents ftbCasparCG As CommonControls.ctrFileTextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents ptbTemplatePath As CommonControls.ctrPathTextBox
-    Friend WithEvents Label3 As Label
+   Friend WithEvents btnCancel As TemplateBuilderHost.NiceButton
+   Friend WithEvents btnOk As TemplateBuilderHost.NiceButton
+   Friend WithEvents ftbCompiler As TemplateBuilderHost.ctrFileTextBox
+   Friend WithEvents ftbCasparCG As TemplateBuilderHost.ctrFileTextBox
+   Friend WithEvents Label2 As Label
+   Friend WithEvents ptbTemplatePath As TemplateBuilderHost.ctrPathTextBox
+   Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents cboAddInfoFields As ComboBox
     Friend WithEvents chkHelper2Root As CheckBox

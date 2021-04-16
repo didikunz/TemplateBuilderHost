@@ -1,27 +1,27 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmMain
-   Inherits System.Windows.Forms.Form
+    Inherits System.Windows.Forms.Form
 
-   'Form overrides dispose to clean up the component list.
-   <System.Diagnostics.DebuggerNonUserCode()> _
-   Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-      Try
-         If disposing AndAlso components IsNot Nothing Then
-            components.Dispose()
-         End If
-      Finally
-         MyBase.Dispose(disposing)
-      End Try
-   End Sub
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
 
-   'Required by the Windows Form Designer
-   Private components As System.ComponentModel.IContainer
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
 
-   'NOTE: The following procedure is required by the Windows Form Designer
-   'It can be modified using the Windows Form Designer.  
-   'Do not modify it using the code editor.
-   <System.Diagnostics.DebuggerStepThrough()> _
-   Private Sub InitializeComponent()
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.niTaskbarIcon = New System.Windows.Forms.NotifyIcon(Me.components)
@@ -43,23 +43,22 @@ Partial Class frmMain
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtAuthorName = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btnRefreshFolders = New System.Windows.Forms.Button()
         Me.cboDestination = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ptbSourcePath = New CommonControls.ctrPathTextBox()
+        Me.ptbSourcePath = New TemplateBuilderHost.ctrPathTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnCompile = New CommonControls.NiceButton()
+        Me.btnCompile = New TemplateBuilderHost.NiceButton()
         Me.txtOutput = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lnklblClearChannel = New System.Windows.Forms.LinkLabel()
         Me.lnklblClearLayer = New System.Windows.Forms.LinkLabel()
-        Me.btnUpdate = New CommonControls.NiceButton()
+        Me.btnUpdate = New TemplateBuilderHost.NiceButton()
         Me.cboTemplate = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btnStop = New CommonControls.NiceButton()
-        Me.btnNext = New CommonControls.NiceButton()
-        Me.btnPlay = New CommonControls.NiceButton()
-        Me.btnLoad = New CommonControls.NiceButton()
+        Me.btnStop = New TemplateBuilderHost.NiceButton()
+        Me.btnNext = New TemplateBuilderHost.NiceButton()
+        Me.btnPlay = New TemplateBuilderHost.NiceButton()
+        Me.btnLoad = New TemplateBuilderHost.NiceButton()
         Me.btnInvoke2 = New System.Windows.Forms.Button()
         Me.txtInvoke2 = New System.Windows.Forms.TextBox()
         Me.btnInvoke1 = New System.Windows.Forms.Button()
@@ -82,15 +81,17 @@ Partial Class frmMain
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtName1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnFile8 = New System.Windows.Forms.Button()
-        Me.btnFile7 = New System.Windows.Forms.Button()
-        Me.btnFile6 = New System.Windows.Forms.Button()
-        Me.btnFile5 = New System.Windows.Forms.Button()
-        Me.btnFile4 = New System.Windows.Forms.Button()
-        Me.btnFile3 = New System.Windows.Forms.Button()
-        Me.btnFile2 = New System.Windows.Forms.Button()
-        Me.btnFile1 = New System.Windows.Forms.Button()
         Me.lnklblThumbnail = New System.Windows.Forms.LinkLabel()
+        Me.lnklblDocumentation = New System.Windows.Forms.LinkLabel()
+        Me.btnRefreshFolders = New System.Windows.Forms.Button()
+        Me.btnFile1 = New System.Windows.Forms.Button()
+        Me.btnFile2 = New System.Windows.Forms.Button()
+        Me.btnFile3 = New System.Windows.Forms.Button()
+        Me.btnFile4 = New System.Windows.Forms.Button()
+        Me.btnFile5 = New System.Windows.Forms.Button()
+        Me.btnFile6 = New System.Windows.Forms.Button()
+        Me.btnFile7 = New System.Windows.Forms.Button()
+        Me.btnFile8 = New System.Windows.Forms.Button()
         Me.cntmnuTray.SuspendLayout()
         Me.msMain.SuspendLayout()
         Me.SuspendLayout()
@@ -244,16 +245,6 @@ Partial Class frmMain
         Me.Label7.Size = New System.Drawing.Size(67, 13)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Authorname:"
-        '
-        'btnRefreshFolders
-        '
-        Me.btnRefreshFolders.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRefreshFolders.Image = Global.TemplateBuilderHost.My.Resources.Resources.Refresh12
-        Me.btnRefreshFolders.Location = New System.Drawing.Point(622, 39)
-        Me.btnRefreshFolders.Name = "btnRefreshFolders"
-        Me.btnRefreshFolders.Size = New System.Drawing.Size(20, 20)
-        Me.btnRefreshFolders.TabIndex = 7
-        Me.btnRefreshFolders.UseVisualStyleBackColor = True
         '
         'cboDestination
         '
@@ -639,86 +630,6 @@ Partial Class frmMain
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Name:"
         '
-        'btnFile8
-        '
-        Me.btnFile8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile8.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile8.Location = New System.Drawing.Point(622, 462)
-        Me.btnFile8.Name = "btnFile8"
-        Me.btnFile8.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile8.TabIndex = 25
-        Me.btnFile8.UseVisualStyleBackColor = True
-        '
-        'btnFile7
-        '
-        Me.btnFile7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile7.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile7.Location = New System.Drawing.Point(622, 436)
-        Me.btnFile7.Name = "btnFile7"
-        Me.btnFile7.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile7.TabIndex = 22
-        Me.btnFile7.UseVisualStyleBackColor = True
-        '
-        'btnFile6
-        '
-        Me.btnFile6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile6.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile6.Location = New System.Drawing.Point(622, 410)
-        Me.btnFile6.Name = "btnFile6"
-        Me.btnFile6.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile6.TabIndex = 19
-        Me.btnFile6.UseVisualStyleBackColor = True
-        '
-        'btnFile5
-        '
-        Me.btnFile5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile5.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile5.Location = New System.Drawing.Point(622, 384)
-        Me.btnFile5.Name = "btnFile5"
-        Me.btnFile5.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile5.TabIndex = 16
-        Me.btnFile5.UseVisualStyleBackColor = True
-        '
-        'btnFile4
-        '
-        Me.btnFile4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile4.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile4.Location = New System.Drawing.Point(622, 358)
-        Me.btnFile4.Name = "btnFile4"
-        Me.btnFile4.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile4.TabIndex = 13
-        Me.btnFile4.UseVisualStyleBackColor = True
-        '
-        'btnFile3
-        '
-        Me.btnFile3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile3.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile3.Location = New System.Drawing.Point(622, 332)
-        Me.btnFile3.Name = "btnFile3"
-        Me.btnFile3.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile3.TabIndex = 10
-        Me.btnFile3.UseVisualStyleBackColor = True
-        '
-        'btnFile2
-        '
-        Me.btnFile2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile2.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile2.Location = New System.Drawing.Point(622, 306)
-        Me.btnFile2.Name = "btnFile2"
-        Me.btnFile2.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile2.TabIndex = 7
-        Me.btnFile2.UseVisualStyleBackColor = True
-        '
-        'btnFile1
-        '
-        Me.btnFile1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFile1.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
-        Me.btnFile1.Location = New System.Drawing.Point(622, 280)
-        Me.btnFile1.Name = "btnFile1"
-        Me.btnFile1.Size = New System.Drawing.Size(20, 20)
-        Me.btnFile1.TabIndex = 4
-        Me.btnFile1.UseVisualStyleBackColor = True
-        '
         'lnklblThumbnail
         '
         Me.lnklblThumbnail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -730,11 +641,113 @@ Partial Class frmMain
         Me.lnklblThumbnail.TabStop = True
         Me.lnklblThumbnail.Text = "Capture thumbnail"
         '
+        'lnklblDocumentation
+        '
+        Me.lnklblDocumentation.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lnklblDocumentation.AutoSize = True
+        Me.lnklblDocumentation.Location = New System.Drawing.Point(86, 517)
+        Me.lnklblDocumentation.Name = "lnklblDocumentation"
+        Me.lnklblDocumentation.Size = New System.Drawing.Size(88, 13)
+        Me.lnklblDocumentation.TabIndex = 40
+        Me.lnklblDocumentation.TabStop = True
+        Me.lnklblDocumentation.Text = "Documentation..."
+        '
+        'btnRefreshFolders
+        '
+        Me.btnRefreshFolders.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRefreshFolders.Image = Global.TemplateBuilderHost.My.Resources.Resources.Refresh12
+        Me.btnRefreshFolders.Location = New System.Drawing.Point(622, 39)
+        Me.btnRefreshFolders.Name = "btnRefreshFolders"
+        Me.btnRefreshFolders.Size = New System.Drawing.Size(20, 20)
+        Me.btnRefreshFolders.TabIndex = 7
+        Me.btnRefreshFolders.UseVisualStyleBackColor = True
+        '
+        'btnFile1
+        '
+        Me.btnFile1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile1.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile1.Location = New System.Drawing.Point(622, 280)
+        Me.btnFile1.Name = "btnFile1"
+        Me.btnFile1.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile1.TabIndex = 4
+        Me.btnFile1.UseVisualStyleBackColor = True
+        '
+        'btnFile2
+        '
+        Me.btnFile2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile2.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile2.Location = New System.Drawing.Point(622, 306)
+        Me.btnFile2.Name = "btnFile2"
+        Me.btnFile2.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile2.TabIndex = 7
+        Me.btnFile2.UseVisualStyleBackColor = True
+        '
+        'btnFile3
+        '
+        Me.btnFile3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile3.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile3.Location = New System.Drawing.Point(622, 332)
+        Me.btnFile3.Name = "btnFile3"
+        Me.btnFile3.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile3.TabIndex = 10
+        Me.btnFile3.UseVisualStyleBackColor = True
+        '
+        'btnFile4
+        '
+        Me.btnFile4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile4.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile4.Location = New System.Drawing.Point(622, 358)
+        Me.btnFile4.Name = "btnFile4"
+        Me.btnFile4.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile4.TabIndex = 13
+        Me.btnFile4.UseVisualStyleBackColor = True
+        '
+        'btnFile5
+        '
+        Me.btnFile5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile5.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile5.Location = New System.Drawing.Point(622, 384)
+        Me.btnFile5.Name = "btnFile5"
+        Me.btnFile5.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile5.TabIndex = 16
+        Me.btnFile5.UseVisualStyleBackColor = True
+        '
+        'btnFile6
+        '
+        Me.btnFile6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile6.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile6.Location = New System.Drawing.Point(622, 410)
+        Me.btnFile6.Name = "btnFile6"
+        Me.btnFile6.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile6.TabIndex = 19
+        Me.btnFile6.UseVisualStyleBackColor = True
+        '
+        'btnFile7
+        '
+        Me.btnFile7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile7.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile7.Location = New System.Drawing.Point(622, 436)
+        Me.btnFile7.Name = "btnFile7"
+        Me.btnFile7.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile7.TabIndex = 22
+        Me.btnFile7.UseVisualStyleBackColor = True
+        '
+        'btnFile8
+        '
+        Me.btnFile8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnFile8.Image = Global.TemplateBuilderHost.My.Resources.Resources.TreeDots12
+        Me.btnFile8.Location = New System.Drawing.Point(622, 462)
+        Me.btnFile8.Name = "btnFile8"
+        Me.btnFile8.Size = New System.Drawing.Size(20, 20)
+        Me.btnFile8.TabIndex = 25
+        Me.btnFile8.UseVisualStyleBackColor = True
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(648, 598)
+        Me.Controls.Add(Me.lnklblDocumentation)
         Me.Controls.Add(Me.lnklblThumbnail)
         Me.Controls.Add(Me.lnklblClearChannel)
         Me.Controls.Add(Me.cboFrameRate)
@@ -818,7 +831,7 @@ Partial Class frmMain
     Friend WithEvents cntmnuTrayExit As ToolStripMenuItem
     Friend WithEvents txtOutput As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnCompile As CommonControls.NiceButton
+    Friend WithEvents btnCompile As TemplateBuilderHost.NiceButton
     Friend WithEvents btnFile1 As Button
     Friend WithEvents txtValue1 As TextBox
     Friend WithEvents Label3 As Label
@@ -845,22 +858,22 @@ Partial Class frmMain
     Friend WithEvents btnFile2 As Button
     Friend WithEvents txtValue2 As TextBox
     Friend WithEvents txtName2 As TextBox
-    Friend WithEvents btnStop As CommonControls.NiceButton
-    Friend WithEvents btnNext As CommonControls.NiceButton
-    Friend WithEvents btnPlay As CommonControls.NiceButton
-    Friend WithEvents btnLoad As CommonControls.NiceButton
+    Friend WithEvents btnStop As TemplateBuilderHost.NiceButton
+    Friend WithEvents btnNext As TemplateBuilderHost.NiceButton
+    Friend WithEvents btnPlay As TemplateBuilderHost.NiceButton
+    Friend WithEvents btnLoad As TemplateBuilderHost.NiceButton
     Friend WithEvents btnInvoke2 As Button
     Friend WithEvents txtInvoke2 As TextBox
     Friend WithEvents btnInvoke1 As Button
     Friend WithEvents txtInvoke1 As TextBox
-    Friend WithEvents ptbSourcePath As CommonControls.ctrPathTextBox
+    Friend WithEvents ptbSourcePath As TemplateBuilderHost.ctrPathTextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents cboDestination As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btnRefreshFolders As Button
     Friend WithEvents cboTemplate As ComboBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents btnUpdate As CommonControls.NiceButton
+    Friend WithEvents btnUpdate As TemplateBuilderHost.NiceButton
     Friend WithEvents lnklblClearChannel As LinkLabel
     Friend WithEvents lnklblClearLayer As LinkLabel
     Friend WithEvents txtAuthorName As TextBox
@@ -872,4 +885,5 @@ Partial Class frmMain
     Friend WithEvents cboFrameRate As ComboBox
     Friend WithEvents Label10 As Label
     Friend WithEvents lnklblThumbnail As LinkLabel
+    Friend WithEvents lnklblDocumentation As LinkLabel
 End Class
