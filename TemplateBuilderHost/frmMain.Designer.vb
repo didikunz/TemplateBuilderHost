@@ -22,14 +22,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.niTaskbarIcon = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.cntmnuTray = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.cntmnuTrayShowUserInterface = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cntmnuTrayBuild = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cntmnuTraySep1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.cntmnuTrayExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.msMain = New System.Windows.Forms.MenuStrip()
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFileSettings = New System.Windows.Forms.ToolStripMenuItem()
@@ -92,47 +85,8 @@ Partial Class frmMain
         Me.btnFile6 = New System.Windows.Forms.Button()
         Me.btnFile7 = New System.Windows.Forms.Button()
         Me.btnFile8 = New System.Windows.Forms.Button()
-        Me.cntmnuTray.SuspendLayout()
         Me.msMain.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'niTaskbarIcon
-        '
-        Me.niTaskbarIcon.BalloonTipText = "Run Template Builder and play the template"
-        Me.niTaskbarIcon.BalloonTipTitle = "Template Builder Host"
-        Me.niTaskbarIcon.ContextMenuStrip = Me.cntmnuTray
-        Me.niTaskbarIcon.Icon = CType(resources.GetObject("niTaskbarIcon.Icon"), System.Drawing.Icon)
-        Me.niTaskbarIcon.Text = "Template Builder Host"
-        '
-        'cntmnuTray
-        '
-        Me.cntmnuTray.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.cntmnuTrayShowUserInterface, Me.cntmnuTrayBuild, Me.cntmnuTraySep1, Me.cntmnuTrayExit})
-        Me.cntmnuTray.Name = "cntmnuTray"
-        Me.cntmnuTray.Size = New System.Drawing.Size(187, 76)
-        '
-        'cntmnuTrayShowUserInterface
-        '
-        Me.cntmnuTrayShowUserInterface.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.cntmnuTrayShowUserInterface.Name = "cntmnuTrayShowUserInterface"
-        Me.cntmnuTrayShowUserInterface.Size = New System.Drawing.Size(186, 22)
-        Me.cntmnuTrayShowUserInterface.Text = "Show user interface"
-        '
-        'cntmnuTrayBuild
-        '
-        Me.cntmnuTrayBuild.Name = "cntmnuTrayBuild"
-        Me.cntmnuTrayBuild.Size = New System.Drawing.Size(186, 22)
-        Me.cntmnuTrayBuild.Text = "Build"
-        '
-        'cntmnuTraySep1
-        '
-        Me.cntmnuTraySep1.Name = "cntmnuTraySep1"
-        Me.cntmnuTraySep1.Size = New System.Drawing.Size(183, 6)
-        '
-        'cntmnuTrayExit
-        '
-        Me.cntmnuTrayExit.Name = "cntmnuTrayExit"
-        Me.cntmnuTrayExit.Size = New System.Drawing.Size(186, 22)
-        Me.cntmnuTrayExit.Text = "Exit"
         '
         'msMain
         '
@@ -810,25 +764,17 @@ Partial Class frmMain
         Me.MinimumSize = New System.Drawing.Size(664, 637)
         Me.Name = "frmMain"
         Me.Text = "Template-Builder Host"
-        Me.cntmnuTray.ResumeLayout(False)
         Me.msMain.ResumeLayout(False)
         Me.msMain.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents niTaskbarIcon As NotifyIcon
     Friend WithEvents msMain As MenuStrip
     Friend WithEvents mnuFile As ToolStripMenuItem
     Friend WithEvents mnuFileSettings As ToolStripMenuItem
     Friend WithEvents mnuFileSep1 As ToolStripSeparator
     Friend WithEvents mnuFileExit As ToolStripMenuItem
-    Friend WithEvents cntmnuTray As ContextMenuStrip
-    Friend WithEvents cntmnuTrayShowUserInterface As ToolStripMenuItem
-    Friend WithEvents cntmnuTrayBuild As ToolStripMenuItem
-    Friend WithEvents cntmnuTraySep1 As ToolStripSeparator
-    Friend WithEvents cntmnuTrayExit As ToolStripMenuItem
     Friend WithEvents txtOutput As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCompile As TemplateBuilderHost.NiceButton

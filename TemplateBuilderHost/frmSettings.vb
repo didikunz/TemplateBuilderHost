@@ -1,6 +1,4 @@
-﻿Imports MyColorThemes
-
-Public Class frmSettings
+﻿Public Class frmSettings
 
    Public Property Settings As Settings
 

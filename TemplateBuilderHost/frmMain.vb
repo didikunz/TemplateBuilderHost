@@ -9,10 +9,8 @@ Imports System.Text
 Public Class frmMain
 
    Private _settings As Settings = Nothing
-   Private WithEvents _Caspar As CasparCG = Nothing
-
    Private isLoaded As Boolean = False
-   Private closeProgram As Boolean = False
+   Private WithEvents _Caspar As CasparCG = Nothing
 
 #Region "Forms handling"
 
@@ -185,7 +183,6 @@ Public Class frmMain
    End Sub
 
    Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles mnuFileExit.Click
-      closeProgram = True
       Close()
    End Sub
 
@@ -382,6 +379,54 @@ Public Class frmMain
       _settings.Rate = cboFrameRate.SelectedIndex
    End Sub
 
+
+   Private Function GetImageFilename() As String
+
+      Dim dlg As OpenFileDialog = New OpenFileDialog
+      dlg.Title = "Load Image"
+      dlg.Filter = "Image Files|*.bmp;*.png;*.jpg;*.tif|All Files (*.*)|*.*||"
+      dlg.FilterIndex = 0
+
+      If dlg.ShowDialog(Me) = DialogResult.OK Then
+         Return New Uri(dlg.FileName).ToString
+      Else
+         Return ""
+      End If
+
+   End Function
+
+   Private Sub btnFile1_Click(sender As Object, e As EventArgs) Handles btnFile1.Click
+      txtValue1.Text = GetImageFilename()
+   End Sub
+
+   Private Sub btnFile2_Click(sender As Object, e As EventArgs) Handles btnFile2.Click
+      txtValue2.Text = GetImageFilename()
+   End Sub
+
+   Private Sub btnFile3_Click(sender As Object, e As EventArgs) Handles btnFile3.Click
+      txtValue3.Text = GetImageFilename()
+   End Sub
+
+   Private Sub btnFile4_Click(sender As Object, e As EventArgs) Handles btnFile4.Click
+      txtValue4.Text = GetImageFilename()
+   End Sub
+
+   Private Sub btnFile5_Click(sender As Object, e As EventArgs) Handles btnFile5.Click
+      txtValue5.Text = GetImageFilename()
+   End Sub
+
+   Private Sub btnFile6_Click(sender As Object, e As EventArgs) Handles btnFile6.Click
+      txtValue6.Text = GetImageFilename()
+   End Sub
+
+   Private Sub btnFile7_Click(sender As Object, e As EventArgs) Handles btnFile7.Click
+      txtValue7.Text = GetImageFilename()
+   End Sub
+
+   Private Sub btnFile8_Click(sender As Object, e As EventArgs) Handles btnFile8.Click
+      txtValue8.Text = GetImageFilename()
+   End Sub
+
 #End Region
 
 #Region "CasparCG"
@@ -522,105 +567,15 @@ Public Class frmMain
       End If
 
    End Sub
-
-   Private Function GetImageFilename() As String
-
-      Dim dlg As OpenFileDialog = New OpenFileDialog
-      dlg.Title = "Load Image"
-      dlg.Filter = "Image Files|*.bmp;*.png;*.jpg;*.tif|All Files (*.*)|*.*||"
-      dlg.FilterIndex = 0
-
-      If dlg.ShowDialog(Me) = DialogResult.OK Then
-         Return New Uri(dlg.FileName).ToString
-      Else
-         Return ""
-      End If
-
-   End Function
-
-   Private Sub btnFile1_Click(sender As Object, e As EventArgs) Handles btnFile1.Click
-      txtValue1.Text = GetImageFilename()
-   End Sub
-
-   Private Sub btnFile2_Click(sender As Object, e As EventArgs) Handles btnFile2.Click
-      txtValue2.Text = GetImageFilename()
-   End Sub
-
-   Private Sub btnFile3_Click(sender As Object, e As EventArgs) Handles btnFile3.Click
-      txtValue3.Text = GetImageFilename()
-   End Sub
-
-   Private Sub btnFile4_Click(sender As Object, e As EventArgs) Handles btnFile4.Click
-      txtValue4.Text = GetImageFilename()
-   End Sub
-
-   Private Sub btnFile5_Click(sender As Object, e As EventArgs) Handles btnFile5.Click
-      txtValue5.Text = GetImageFilename()
-   End Sub
-
-   Private Sub btnFile6_Click(sender As Object, e As EventArgs) Handles btnFile6.Click
-      txtValue6.Text = GetImageFilename()
-   End Sub
-
-   Private Sub btnFile7_Click(sender As Object, e As EventArgs) Handles btnFile7.Click
-      txtValue7.Text = GetImageFilename()
-   End Sub
-
-   Private Sub btnFile8_Click(sender As Object, e As EventArgs) Handles btnFile8.Click
-      txtValue8.Text = GetImageFilename()
-   End Sub
-
 #End Region
 
-#Region "Tray"
-
-   Private Sub frmMain_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-      If WindowState = FormWindowState.Minimized Then
-         Hide()
-         niTaskbarIcon.Visible = True
-      End If
-   End Sub
-
-   Private Sub cntmnuTrayShowUserInterface_Click(sender As Object, e As EventArgs) Handles cntmnuTrayShowUserInterface.Click
-      Show()
-      WindowState = FormWindowState.Normal
-      niTaskbarIcon.Visible = False
-   End Sub
-
-   Private Sub cntmnuTrayBuild_Click(sender As Object, e As EventArgs) Handles cntmnuTrayBuild.Click
-      Show()
-      btnCompile_Click(Me, EventArgs.Empty)
-      WindowState = FormWindowState.Normal
-      niTaskbarIcon.Visible = False
-   End Sub
-
-   Private Sub cntmnuTrayExit_Click(sender As Object, e As EventArgs) Handles cntmnuTrayExit.Click
-      closeProgram = True
-      Close()
-   End Sub
-
-   Private Sub niTaskbarIcon_MouseClick(sender As Object, e As MouseEventArgs) Handles niTaskbarIcon.MouseClick
-      If e.Button = MouseButtons.Left Then
-         Show()
-         WindowState = FormWindowState.Normal
-         niTaskbarIcon.Visible = False
-      End If
-   End Sub
-
-   Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-      If e.CloseReason <> CloseReason.WindowsShutDown Then
-         If Not closeProgram Then
-            e.Cancel = True
-            Hide()
-            niTaskbarIcon.Visible = True
-         End If
-      End If
-   End Sub
+#Region "Utils"
 
    Private Sub lnklblThumbnail_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblThumbnail.LinkClicked
       Cursor = Cursors.WaitCursor
       _Caspar.StartGrab(_settings.Channel, "GRAB", 500, True)
    End Sub
+
 
    Private Sub _Caspar_GrabFinish(sender As Object, e As CasparCG.GrabFinishEventArgs) Handles _Caspar.GrabFinish
 
@@ -756,8 +711,6 @@ Public Class frmMain
 
          sb.AppendLine("   </body>")
          sb.AppendLine("</html>")
-
-         Debug.Print(sb.ToString)
 
          File.WriteAllText(fn, sb.ToString)
 
