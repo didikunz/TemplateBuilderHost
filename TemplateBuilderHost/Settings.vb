@@ -6,15 +6,15 @@ Public Class Settings
 
    Public Property CompilerPath As String = ""
 
-   Public Property CasparExePath As String
+   Public Property CasparExePath As String = ""
    Public Property Channel As Integer = 1
    Public Property Layer As Integer = 20
    Public Property CasparTemplatePath As String = ""
+   Public Property MiddlewarePath As String = ""
 
    Public Property TemplateSourcePath As String = ""
    Public Property TemplateDestinationFolder As String = ""
    Public Property CopyHelperToRoot As Boolean = True
-
 
 
    Public Property AddInfoFieldsMode As CasparObjects.CasparCG.enumAddInfoFieldsType = CasparObjects.CasparCG.enumAddInfoFieldsType.itAveco
@@ -43,7 +43,7 @@ Public Class Settings
    Public Property AuthorName As String = ""
    Public Property AuthorEMail As String = ""
    Public Property Resolution As Integer = 5
-   Public Property Rate As Integer = 5
+   Public Property Rate As Integer = 0
 
    Public Property MainLocation() As System.Drawing.Point = New System.Drawing.Point(0, 0)
    Public Property MainSize() As System.Drawing.Size = New System.Drawing.Size(660, 480)
@@ -156,6 +156,20 @@ Public Class Settings
    End Function
 
    Public Sub New()
+
+      CompilerPath = Path.Combine(My.Application.Info.DirectoryPath, "TemplateBuilder\build.exe")
+      CasparExePath = Path.Combine(My.Application.Info.DirectoryPath, "CasparCG\casparcg.exe")
+      MiddlewarePath = Path.Combine(My.Application.Info.DirectoryPath, "Http2AMCP\http2amcp.exe")
+      CasparTemplatePath = Path.Combine(My.Application.Info.DirectoryPath, "CasparCG\templates")
+
+      CasparObjects.CasparCG.WriteCasparConfig(Path.Combine(My.Application.Info.DirectoryPath, "casparcg.xml"), Path.Combine(My.Application.Info.DirectoryPath, "CasparCG"), Path.Combine(My.Application.Info.DirectoryPath, "CasparCG"))
+
+      If CasparObjects.CasparCG.CurrentCountryIsNTSC Then
+         Rate = 6
+      Else
+         Rate = 5
+      End If
+
    End Sub
 
    Sub New(ByVal XMLFile As String)
@@ -167,6 +181,7 @@ Public Class Settings
       Channel = sets.Channel
       Layer = sets.Layer
       CasparTemplatePath = sets.CasparTemplatePath
+      MiddlewarePath = sets.MiddlewarePath
 
       TemplateSourcePath = sets.TemplateSourcePath
       TemplateDestinationFolder = sets.TemplateDestinationFolder

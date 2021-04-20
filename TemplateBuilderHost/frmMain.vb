@@ -11,6 +11,7 @@ Public Class frmMain
    Private _settings As Settings = Nothing
    Private isLoaded As Boolean = False
    Private WithEvents _Caspar As CasparCG = Nothing
+   Private _Middleware_Proc As Process = Nothing
 
 #Region "Forms handling"
 
@@ -108,6 +109,17 @@ Public Class frmMain
       txtInvoke1.Text = _settings.Invoke1
       txtInvoke2.Text = _settings.Invoke2
 
+      If _Caspar.Connected Then
+
+         _Middleware_Proc = New Process
+         _Middleware_Proc.StartInfo.FileName = _settings.MiddlewarePath
+         _Middleware_Proc.StartInfo.WorkingDirectory = IO.Path.GetDirectoryName(_settings.MiddlewarePath)
+         _Middleware_Proc.StartInfo.CreateNoWindow = False
+         _Middleware_Proc.StartInfo.WindowStyle = ProcessWindowStyle.Minimized
+         _Middleware_Proc.Start()
+
+      End If
+
    End Sub
 
    Private Sub SaveData()
@@ -148,6 +160,16 @@ Public Class frmMain
    End Sub
 
    Private Sub frmMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+
+      If _Middleware_Proc IsNot Nothing Then
+         Try
+            _Middleware_Proc.Kill()
+         Catch ex As Exception
+            'ignore
+         Finally
+            _Middleware_Proc.Dispose()
+         End Try
+      End If
 
       If _settings IsNot Nothing Then
 
@@ -679,7 +701,8 @@ Public Class frmMain
    Private Sub lnklblDocumentation_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblDocumentation.LinkClicked
 
       Dim dlg As SaveFileDialog = New SaveFileDialog
-      dlg.Filter = "HTML Document (*.html)|All Files (*.*)|*.*||"
+      dlg.Filter = "HTML Document (*.html)|All Files (*.*)|*.*|"
+      dlg.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
       dlg.FilterIndex = 0
       dlg.DefaultExt = ".html"
 
@@ -717,6 +740,7 @@ Public Class frmMain
       End If
 
    End Sub
+
 
 #End Region
 

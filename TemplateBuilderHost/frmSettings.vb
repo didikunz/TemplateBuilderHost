@@ -9,6 +9,7 @@
       If Settings IsNot Nothing Then
          ftbCompiler.Filename = Settings.CompilerPath
          ftbCasparCG.Filename = Settings.CasparExePath
+         ftbMiddleware.Filename = Settings.MiddlewarePath
          ptbTemplatePath.Path = Settings.CasparTemplatePath
          cboAddInfoFields.SelectedIndex = Settings.AddInfoFieldsMode
          nudChannel.Value = Settings.Channel
@@ -22,6 +23,7 @@
 
       Settings.CompilerPath = ftbCompiler.Filename
       Settings.CasparExePath = ftbCasparCG.Filename
+      Settings.MiddlewarePath = ftbMiddleware.Filename
       Settings.CasparTemplatePath = ptbTemplatePath.Path
       Settings.AddInfoFieldsMode = cboAddInfoFields.SelectedIndex
       Settings.Channel = nudChannel.Value

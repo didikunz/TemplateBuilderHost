@@ -27,16 +27,18 @@ Partial Class frmSettings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.nudChannel = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
-      Me.btnCancel = New TemplateBuilderHost.NiceButton()
-      Me.btnOk = New TemplateBuilderHost.NiceButton()
-      Me.ftbCompiler = New TemplateBuilderHost.ctrFileTextBox()
-      Me.ftbCasparCG = New TemplateBuilderHost.ctrFileTextBox()
-      Me.Label2 = New System.Windows.Forms.Label()
-      Me.ptbTemplatePath = New TemplateBuilderHost.ctrPathTextBox()
-      Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnCancel = New TemplateBuilderHost.NiceButton()
+        Me.btnOk = New TemplateBuilderHost.NiceButton()
+        Me.ftbCompiler = New TemplateBuilderHost.ctrFileTextBox()
+        Me.ftbCasparCG = New TemplateBuilderHost.ctrFileTextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ptbTemplatePath = New TemplateBuilderHost.ctrPathTextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cboAddInfoFields = New System.Windows.Forms.ComboBox()
         Me.chkHelper2Root = New System.Windows.Forms.CheckBox()
+        Me.ftbMiddleware = New TemplateBuilderHost.ctrFileTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.nudLayer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudChannel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,7 +46,7 @@ Partial Class frmSettings
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(306, 133)
+        Me.Label9.Location = New System.Drawing.Point(306, 174)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(36, 13)
         Me.Label9.TabIndex = 21
@@ -52,7 +54,7 @@ Partial Class frmSettings
         '
         'nudLayer
         '
-        Me.nudLayer.Location = New System.Drawing.Point(309, 149)
+        Me.nudLayer.Location = New System.Drawing.Point(309, 190)
         Me.nudLayer.Maximum = New Decimal(New Integer() {9999, 0, 0, 0})
         Me.nudLayer.Name = "nudLayer"
         Me.nudLayer.Size = New System.Drawing.Size(83, 20)
@@ -62,7 +64,7 @@ Partial Class frmSettings
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(217, 133)
+        Me.Label5.Location = New System.Drawing.Point(217, 174)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 13)
         Me.Label5.TabIndex = 19
@@ -70,7 +72,7 @@ Partial Class frmSettings
         '
         'nudChannel
         '
-        Me.nudChannel.Location = New System.Drawing.Point(220, 149)
+        Me.nudChannel.Location = New System.Drawing.Point(220, 190)
         Me.nudChannel.Maximum = New Decimal(New Integer() {8, 0, 0, 0})
         Me.nudChannel.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudChannel.Name = "nudChannel"
@@ -95,7 +97,7 @@ Partial Class frmSettings
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(291, 184)
+        Me.btnCancel.Location = New System.Drawing.Point(291, 224)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(101, 38)
         Me.btnCancel.TabIndex = 15
@@ -110,7 +112,7 @@ Partial Class frmSettings
         Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnOk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.btnOk.ForeColor = System.Drawing.Color.White
-        Me.btnOk.Location = New System.Drawing.Point(184, 184)
+        Me.btnOk.Location = New System.Drawing.Point(184, 224)
         Me.btnOk.Name = "btnOk"
         Me.btnOk.Size = New System.Drawing.Size(101, 38)
         Me.btnOk.TabIndex = 14
@@ -122,9 +124,9 @@ Partial Class frmSettings
         '
         Me.ftbCompiler.BackColor = System.Drawing.Color.Transparent
         Me.ftbCompiler.CustomDialogFilter = "Compiler exe file (Build.exe)|Build.exe|All Files (*.*)|*.*||"
-      Me.ftbCompiler.DialogFilter = TemplateBuilderHost.ctrFileTextBox.DialogFilterType.dtfCustom
-      Me.ftbCompiler.DialogType = TemplateBuilderHost.ctrFileTextBox.enumDialogType.OpenDialog
-      Me.ftbCompiler.Filename = ""
+        Me.ftbCompiler.DialogFilter = TemplateBuilderHost.ctrFileTextBox.DialogFilterType.dtfCustom
+        Me.ftbCompiler.DialogType = TemplateBuilderHost.ctrFileTextBox.enumDialogType.OpenDialog
+        Me.ftbCompiler.Filename = ""
         Me.ftbCompiler.IntialDirectory = ""
         Me.ftbCompiler.Location = New System.Drawing.Point(13, 24)
         Me.ftbCompiler.Margin = New System.Windows.Forms.Padding(0)
@@ -141,9 +143,9 @@ Partial Class frmSettings
         '
         Me.ftbCasparCG.BackColor = System.Drawing.Color.Transparent
         Me.ftbCasparCG.CustomDialogFilter = "Compiler exe file (Build.exe)|Build.exe|All Files (*.*)|*.*||"
-      Me.ftbCasparCG.DialogFilter = TemplateBuilderHost.ctrFileTextBox.DialogFilterType.dtfCustom
-      Me.ftbCasparCG.DialogType = TemplateBuilderHost.ctrFileTextBox.enumDialogType.OpenDialog
-      Me.ftbCasparCG.Filename = ""
+        Me.ftbCasparCG.DialogFilter = TemplateBuilderHost.ctrFileTextBox.DialogFilterType.dtfCustom
+        Me.ftbCasparCG.DialogType = TemplateBuilderHost.ctrFileTextBox.enumDialogType.OpenDialog
+        Me.ftbCasparCG.Filename = ""
         Me.ftbCasparCG.IntialDirectory = ""
         Me.ftbCasparCG.Location = New System.Drawing.Point(13, 64)
         Me.ftbCasparCG.Margin = New System.Windows.Forms.Padding(0)
@@ -169,7 +171,7 @@ Partial Class frmSettings
         'ptbTemplatePath
         '
         Me.ptbTemplatePath.BackColor = System.Drawing.Color.Transparent
-        Me.ptbTemplatePath.Location = New System.Drawing.Point(13, 107)
+        Me.ptbTemplatePath.Location = New System.Drawing.Point(13, 148)
         Me.ptbTemplatePath.MaximumSize = New System.Drawing.Size(30000, 20)
         Me.ptbTemplatePath.Name = "ptbTemplatePath"
         Me.ptbTemplatePath.Path = ""
@@ -182,7 +184,7 @@ Partial Class frmSettings
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 91)
+        Me.Label3.Location = New System.Drawing.Point(12, 132)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(137, 13)
         Me.Label3.TabIndex = 26
@@ -191,7 +193,7 @@ Partial Class frmSettings
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 132)
+        Me.Label4.Location = New System.Drawing.Point(12, 173)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(103, 13)
         Me.Label4.TabIndex = 27
@@ -202,20 +204,50 @@ Partial Class frmSettings
         Me.cboAddInfoFields.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboAddInfoFields.FormattingEnabled = True
         Me.cboAddInfoFields.Items.AddRange(New Object() {"None", "Standard", "Aveco"})
-        Me.cboAddInfoFields.Location = New System.Drawing.Point(13, 148)
+        Me.cboAddInfoFields.Location = New System.Drawing.Point(13, 189)
         Me.cboAddInfoFields.Name = "cboAddInfoFields"
         Me.cboAddInfoFields.Size = New System.Drawing.Size(201, 21)
         Me.cboAddInfoFields.TabIndex = 28
         '
         'chkHelper2Root
         '
+        Me.chkHelper2Root.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.chkHelper2Root.AutoSize = True
-        Me.chkHelper2Root.Location = New System.Drawing.Point(15, 196)
+        Me.chkHelper2Root.Location = New System.Drawing.Point(15, 238)
         Me.chkHelper2Root.Name = "chkHelper2Root"
         Me.chkHelper2Root.Size = New System.Drawing.Size(120, 17)
         Me.chkHelper2Root.TabIndex = 29
         Me.chkHelper2Root.Text = "Copy helpers to root"
         Me.chkHelper2Root.UseVisualStyleBackColor = True
+        '
+        'ftbMiddleware
+        '
+        Me.ftbMiddleware.BackColor = System.Drawing.Color.Transparent
+        Me.ftbMiddleware.CustomDialogFilter = "Middleware exe file (http2amcp.exe)|http2amcp.exe|All Files (*.*)|*.*||"
+        Me.ftbMiddleware.DialogFilter = TemplateBuilderHost.ctrFileTextBox.DialogFilterType.dtfCustom
+        Me.ftbMiddleware.DialogType = TemplateBuilderHost.ctrFileTextBox.enumDialogType.OpenDialog
+        Me.ftbMiddleware.Filename = ""
+        Me.ftbMiddleware.IntialDirectory = ""
+        Me.ftbMiddleware.Location = New System.Drawing.Point(13, 105)
+        Me.ftbMiddleware.Margin = New System.Windows.Forms.Padding(0)
+        Me.ftbMiddleware.MaximumSize = New System.Drawing.Size(30000, 20)
+        Me.ftbMiddleware.MinimumSize = New System.Drawing.Size(75, 20)
+        Me.ftbMiddleware.Name = "ftbMiddleware"
+        Me.ftbMiddleware.OverwritePrompt = True
+        Me.ftbMiddleware.ShowClearButton = False
+        Me.ftbMiddleware.Size = New System.Drawing.Size(379, 20)
+        Me.ftbMiddleware.TabIndex = 31
+        Me.ftbMiddleware.ToolTipControl = Nothing
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Location = New System.Drawing.Point(11, 90)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(110, 13)
+        Me.Label6.TabIndex = 30
+        Me.Label6.Text = "Middleware-Exe-Path:"
         '
         'frmSettings
         '
@@ -223,8 +255,10 @@ Partial Class frmSettings
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
-        Me.ClientSize = New System.Drawing.Size(406, 232)
+        Me.ClientSize = New System.Drawing.Size(406, 272)
         Me.ControlBox = False
+        Me.Controls.Add(Me.ftbMiddleware)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.chkHelper2Root)
         Me.Controls.Add(Me.cboAddInfoFields)
         Me.Controls.Add(Me.Label4)
@@ -268,4 +302,6 @@ Partial Class frmSettings
     Friend WithEvents Label4 As Label
     Friend WithEvents cboAddInfoFields As ComboBox
     Friend WithEvents chkHelper2Root As CheckBox
+    Friend WithEvents ftbMiddleware As ctrFileTextBox
+    Friend WithEvents Label6 As Label
 End Class
