@@ -1,7 +1,7 @@
 # TemplateBuilderHost
 Wrapper to Martin Wacker's Template Builder for HTML 5
 
-You can download the setup program from [here][1] and the documentation from [here][2]
+You can download the setup program from [here][1] and the documentation from [here][2].
 This programm uses [CasparObjects][3] as a dependency.
 
 Open source, licensed under the Apache License.
